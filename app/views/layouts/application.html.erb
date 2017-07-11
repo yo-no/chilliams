@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chilliams</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="header">
+      <div >
+        <a href="/"><%= image_tag('jctext', id: "logo") %></a>
+      </div>
+    </div>
+
+  <div class="navigation">
+    <ul>
+      <li><a href="/shows">shows</a></li>
+      <li><a href="http://josephchilliams.bigcartel.com/">merch</a></li>
+      <li><a href="/etc">etc</a></li>
+    </ul> 
+  </div>
+
+    
+    <div id="background-wrap">
+      <div class="x1">
+          <div class="cloud"></div>
+      </div>
+
+      <div class="x2">
+          <div class="cloud"></div>
+      </div>
+
+      <div class="x3">
+          <div class="cloud"></div>
+      </div>
+
+      <div class="x4">
+          <div class="cloud"></div>
+      </div>
+
+      <div class="x5">
+          <div class="cloud"></div>
+      </div>
+    </div>
+
+    <%= yield %>
+
+
+  </body>
+</html>
