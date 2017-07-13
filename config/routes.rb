@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   end
 
   get '/' => 'pages#index'
+  
   get '/shows' => 'shows#index'
+  get '/shows/new' => 'shows#new'
+  post '/shows/' => 'shows#create'
+  get '/shows/:id/edit' => 'shows#edit'
+  patch 'shows/:id/' => 'shows#update'
 
   get  "/signup"  =>  "users#new"
   post  "/users"  =>  "users#create"

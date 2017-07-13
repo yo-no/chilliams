@@ -1,0 +1,19 @@
+<%= form_tag "/shows/#{ @show.id }", method: :patch do  %>
+  <div>
+    <%= label_tag :date %>
+    <%= date_field_tag :date %>
+  </div>
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description %>
+  </div>
+  <div>
+    <%= label_tag :location %>
+    <%= text_field_tag :location %>
+  </div>
+  <div>
+    <%= label_tag :url %>
+    <%= text_field_tag :url %>
+  </div>
+  <%= submit_tag "Submit" %>
+<% end %>
