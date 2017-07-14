@@ -1,25 +1,18 @@
 .table {
   font-size: 16px;
+  margin: 10px 10px 0px 0px;
 }
 
 .table > thead > tr > th {
-background-color: pink;
-margin: 4px;
+// border-bottom: 4px solid black;
 }
 
-.table > thead > tr > th:first-child {
-border-left: none;
-}
 
-.table > thead > tr > th:last-child {
-border-right: none;
-}
 
 table td {
-background-color: pink;
-margin: 4px
-
+// border-bottom: 4px solid black;
 }
+
 
 table td:first-child {
 border-left: none;
@@ -31,6 +24,7 @@ border-right: none;
 
 .table > tbody > tr:last-child {
 border-bottom: none;
+;
 }
 
 .table-striped>tbody>tr:nth-child(odd)>td, 
