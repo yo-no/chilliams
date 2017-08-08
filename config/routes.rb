@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+
+  get 'videos/index'
+
+  get 'shows/index'
+
   namespace :admin do
-    resources :shows, except: [:index, :show]
-    get "/" => "admins#index"
+    get '', to: 'dashboard#index', as: '/'
+    resources :shows
+    resources :videos
   end
 
   get '/' => 'pages#index'

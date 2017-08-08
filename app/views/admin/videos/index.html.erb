@@ -1,0 +1,13 @@
+<h1>~<%= link_to "ADMIN", admin_path %>~</h1>
+<table>
+  <% @videos.each do |video| %>
+  <tr>
+    <td><%= video.title %></td>
+    <td><%= video.url %></td>
+    <td><%= link_to "edit", "/admin/videos/#{video.id}/edit" %></td>
+    <td><%= link_to "delete", "/admin/videos/#{video.id}", method: :delete %></td>
+  </tr>
+    
+  <% end %>
+</table>
+
