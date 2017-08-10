@@ -1,26 +1,30 @@
 
 <div class="row">
   <div class="col-md-10 col-md-offset-1 text-center">
-    <h1>~ADMIN MODE~</h1>
+   <h1>~<%= link_to "ADMIN", admin_path %>~</h1>
+    <h3>all shows:</h3>
     <table class="table">
-<!--       <thead>
+      <thead>
         <tr>
-          <th>Date</th>
-          <th>Venue</th>
-          <th>City</th>
-          <th>Url</th>
+          <td>Date</td>
+          <td>Venue</td>
+          <td>City</td>
+          <td>Url</td>
         </tr>
-      </thead> -->
+      </thead>
       <tbody>
       <% @shows.each do |show| %>
         <tr>
           <td><%= show.date.strftime("%m/%d") %></td>
           <td><%= show.description %></td>
           <td><%= show.location %></td>
-          <td><a href="<%= show.url %>">More Info</a></td>
+          <td><a href="<%= show.url %>">link</a></td>
+          <td><%= link_to "edit", "/admin/shows/#{show.id}/edit" %></td>
+          <td><%= link_to "delete", "/admin/shows/#{show.id}", method: :delete %></td>
         </tr>
       <% end %>
       </tbody>
     </table>
+    <button class="btn btn-default"><%= link_to "New Show", "/admin/shows/new" %></button>
   </div>
 </div>

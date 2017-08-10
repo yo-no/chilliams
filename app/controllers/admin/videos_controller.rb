@@ -1,4 +1,7 @@
 class Admin::VideosController < ApplicationController
+
+  before_filter :authenticate_user!
+
   def index
     @videos = Video.all
   end
@@ -8,11 +11,14 @@ class Admin::VideosController < ApplicationController
   end
 
   def create
-    video = Video.create(
-                      title: params["title"],
-                      url: params["url"]
-                      )
-    redirect_to "/videos"
+    @video = Video.new(video_params)
+    if @video.save!
+      flash[:success] = "video created!"
+      redirect_to '/videos'
+    else
+      flash[:error] = "video failed to upload"
+      render :new
+    end
   end
 
   def edit
@@ -21,17 +27,25 @@ class Admin::VideosController < ApplicationController
 
   def update
     @video = Video.find(params[:id])
-    video = @video.update(
-                      title: params["title"],
-                      url: params["url"]
-                      )
-    redirect_to "/videos"
+    if @video.update(video_params)
+      flash[:success]= "video has been successfully updated."
+      redirect_to "/videos"
+    else
+      flash[:error] = "lets try that again"
+      render :edit 
+    end
   end
 
   def destroy
     @video = Video.find(params[:id])
     @video.destroy
-    redirect_to "/"
+    redirect_to "/admin/videos"
+  end
+
+  private
+
+  def video_params
+    params.require(:video).permit(:title, :url)
   end
 
 end

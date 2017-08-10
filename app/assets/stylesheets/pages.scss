@@ -12,17 +12,16 @@ html, body {
 }
 
 #main-wrapper {
-    min-height: 100%;
-    padding: 0 0 100px;
-    position: relative;
+  min-height: 100%;
+  margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+}
+
+footer, .push {
+  height: 50px; /* '.push' must be the same height as 'footer' */
 }
 
 footer {
-    bottom: 0;
-    
-    left: 0;
-    position: absolute;
-    width: 100%;
+  
 }
 
 body{
@@ -78,6 +77,14 @@ body{
   z-index: -1;
 }
 
+
+
+#album-title {
+  font-size: 3em;
+  color: #D7A3FF;
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
 .navigation ul {
   text-align: center;
   padding: 0px;
@@ -90,6 +97,7 @@ body{
   padding: 0px 20px;
   font-family: 'Shrikhand', cursive;
   font-size: 2.5em;
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 a {
@@ -105,11 +113,7 @@ a:hover {
   font-family: 'Shrikhand', cursive;
   font-size: 2.5em;
   color: #D7A3FF;
-}
-
-.album-links h1 {
-  font-size: 3em;
-  color: #D7A3FF;
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 .album-links a {

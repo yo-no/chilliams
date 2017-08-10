@@ -1,14 +1,6 @@
-<%= form_tag '/videos', method: :post do  %>
-
-  <div>
-    <%= label_tag :title %>
-    <%= text_field_tag :title %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>NEW VIDEO</h1>
+    <%= render 'form' %>
   </div>
-
-  <div>
-    <%= label_tag :url %>
-    <%= text_field_tag :url %>
-  </div>
-  
-  <%= submit_tag "Submit" %>
-<% end %>
+</div>

@@ -1,14 +1,6 @@
-<%= form_tag "videos/#{ @video.id }", method: :patch do  %>
-
-  <div>
-    <%= f.label_tag :title %>
-    <%= f.text_field_tag :title, @video.title %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>EDIT VIDEO</h1>
+    <%= render 'form' %>
   </div>
-
-  <div>
-    <%= f.label_tag :url %>
-    <%= f.text_field_tag :url, @video.url %>
-  </div>
-  
-  <%= submit_tag "Submit" %>
-<% end %>
+</div>

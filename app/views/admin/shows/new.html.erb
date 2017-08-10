@@ -1,19 +1,6 @@
-<%= form_for [@admin, @show] do |f| %>
-  <div>
-    <%= f.label :date %>
-    <%= f.date_field :date %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>NEW SHOW</h1>
+    <%= render 'form' %>
   </div>
-  <div>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-  <div>
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
-  <div>
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </div>
-  <%= f.submit "Submit" %>
-<% end %>
+</div>

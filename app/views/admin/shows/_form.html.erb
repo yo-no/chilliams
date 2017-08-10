@@ -1,19 +1,19 @@
-<%= form_tag '/shows', method: :post do  %>
+<%= form_for [:admin, @show], :html => { :multipart => true } do |f| %>
   <div>
-    <%= label_tag :date %>
-    <%= date_field_tag :date %>
+    <%= f.label :date %>
+    <%= f.date_field :date, class: "form-control", required: true %>
   </div>
   <div>
-    <%= label_tag :description %>
-    <%= text_field_tag :description %>
+    <%= f.label :description %>
+    <%= f.text_field :description, class: "form-control", required: true %>
   </div>
   <div>
-    <%= label_tag :location %>
-    <%= text_field_tag :location %>
+    <%= f.label :location %>
+    <%= f.text_field :location, class: "form-control", required: true %>
   </div>
   <div>
-    <%= label_tag :url %>
-    <%= text_field_tag :url %>
+    <%= f.label "url (plz include http://)" %>
+    <%= f.text_field :url, class: "form-control" %>
   </div>
-  <%= submit_tag "Submit" %>
+  <%= f.submit "Submit" %>
 <% end %>

@@ -1,0 +1,14 @@
+<%= form_for [:admin, @video], :html => { :multipart => true } do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control", required: true %>
+  </div>
+
+  <div>
+    <%= f.label "url (only works for youtube if you wanna add a vimeo or something hmu)" %>
+    <%= f.text_field :url, class: "form-control", required: true %>
+    <%= image_tag "urlexample.gif" %>
+  </div>
+  
+  <%= f.submit "Submit" %>
+<% end %>
