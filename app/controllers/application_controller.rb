@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authenticate_user!
-    redirect_to '/login' unless current_user
+    redirect_to "/" if current_user.nil?
   end
   
 end
